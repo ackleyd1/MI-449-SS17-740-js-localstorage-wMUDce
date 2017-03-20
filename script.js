@@ -20,12 +20,11 @@ toggle.addEventListener('click', changeTheme)
 
 if (visitedValue === null) {
   visitedValue = 1
-  visited.textContent = visitedValue.toString() + ' time'
+  visited.textContent = visitedValue + ' time'
   window.localStorage.setItem('visitedValue', visitedValue)
 } else {
-  visitedValue = parseInt(visitedValue)
-  visitedValue += 1
-  visited.textContent = visitedValue.toString() + ' times'
+  visitedValue = parseInt(visitedValue) + 1
+  visited.textContent = visitedValue + ' times'
   window.localStorage.setItem('visitedValue', visitedValue)
 }
 
@@ -33,7 +32,6 @@ if (dayFlag === null) {
   dayFlag = true
   window.localStorage.setItem('dayFlag', dayFlag)
 } else {
-  dayFlag = (dayFlag === 'true')
-  dayFlag = !dayFlag
+  dayFlag = !(dayFlag === 'true')
   changeTheme()
 }
